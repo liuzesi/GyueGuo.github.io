@@ -1,1 +1,13 @@
 theme: jekyll-theme-cayman
+
+# Site settings
+
+title: 郭霁元的博客
+SEOTitle: 郭霁元的博客 | GyueGuo Blog
+# header-img: img/home-bg-hill.jpg
+email: 2434795345@qq.com
+description: "一个前端菜鸟的自我修养"
+keyword: "郭霁元, 前端"
+url: "https://gyueguo.github.io/"
+baseurl: ""
+# settings end
