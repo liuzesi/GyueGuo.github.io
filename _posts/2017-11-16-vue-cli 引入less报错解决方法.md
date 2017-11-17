@@ -3,7 +3,7 @@ layout: post
 title: vue-cli 引入less报错解决方法
 date: 2017-11-06
 categories: blog
-tags: [javascript, vue]
+tags: [vue]
 description: vue-cli 引入less报错解决方法
 ---
 
