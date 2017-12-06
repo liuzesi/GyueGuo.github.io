@@ -23,7 +23,7 @@ header-img: "img/semantic.jpg"
 
 
 {% for tag in site.tags %}
-<p class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</p>
+<h4 class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</h4>
 <ol class="listing">
 {% for post in tag[1] %}
   <li class="listing-item">
