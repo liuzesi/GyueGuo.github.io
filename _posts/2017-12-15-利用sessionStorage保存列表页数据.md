@@ -7,13 +7,12 @@ tags: [javascript]
 description: 利用sessionStorage保存列表页数据及sessionStorage特性记录
 ---
 
-在之前的学习工作中因为应用场景的原因对于*sessionStorage*接触的并不多，大部分时间都没有考虑过*sessionStorage*。之前需要存储数据的时候，少量数据存*cookie*，大量数据存*localStorage*。
-前几天在做公众号钓场列表页的时候，突然想到可以用*sessionStorage*缓存数据，这样用户在从详情页返回列表页的时候，列表页可以还原成之前的样子，也不用重复请求数据了。使用*sessionStorage*的一大好处就是，数据在回话关闭后自动清除，这样进入列表页不会被以前缓存的数据干扰。
+在之前的学习工作中因为应用场景的原因对于`sessionStorage`接触的并不多，大部分时间都没有考虑过`sessionStorage`，需要存储数据的时候，少量数据存*`cookie`，大量数据存`localStorage`。使用ajax异步加载数据的页面，在跳转后返回时需要新获取数据，浏览状态无法保存，这个时候需要我们自己对数据进行缓存，之前实现这种功能用的localStorage，前两天突然想到sessionStorage，然后试了下发现确实这种情况使用sessionStorage更合适。
 
 下面是使用过程：
 - 点击跳转详情页用click事件而不是a标签，以便我们知道何时需要缓存数据；
-- 点击时间中将可能用到的数据写入一个object，以字符串的形式存入sessionStorage；
-- 页面返回时在sessionStorage查找时候存在缓存数据，是则还原数据，否则将缓存数据写入页面。
+- 点击时间中将可能用到的数据写入一个object，以字符串的形式存入`sessionStorage`；
+- 页面返回时在`sessionStorage`查找时候存在缓存数据，是则还原数据，否则将缓存数据写入页面。
 
 点击事件：
 
@@ -40,5 +39,9 @@ if (list) {  // 存在缓存
 }
 
 ```
-需要注意的是 *sessionStotage*、*localStorage*、*cookie*都只能存储字符串。
-*sessionStotage* 浏览器（当前标签）关闭，或者手动改变网址的时候会清除数据，浏览器多个同域标签无法互相访问*sessionStotage*。
+需要注意的是
+- `sessionStotage`、`localStorage`、`cookie`都只能存储字符串。
+- `sessionStotage` 浏览器（当前标签）关闭，数据会被清除。
+- 浏览器手动打开多个同域标签无法互相获取`sessionStotage`。
+- 当前页面通过window.open 或者 a链接打开的同域子页面可以访问父页面的`sessionStotage`，子页面存在关闭父页面数据不会清除。
+- 当前页面跳转另一域页面无法获取数据，返回页面可以获取。
