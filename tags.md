@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "catalog"
+title: "分类"
 description: '文章分类'  
 header-img: "img/semantic.jpg"  
 ---
