@@ -29,6 +29,16 @@ header-img: "img/twitter.jpg"
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
+    {% set i = 0 %}
+    {% for i < paginator.total_pages %}
+    <a href="/page{{i}}"></a>
+    {% set i+= 1 %}
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if paginator.total_pages > 1 %}
+<!-- <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
@@ -40,5 +50,5 @@ header-img: "img/twitter.jpg"
         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
     </li>
     {% endif %}
-</ul>
+</ul> -->
 {% endif %}
