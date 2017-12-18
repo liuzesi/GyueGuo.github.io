@@ -25,30 +25,28 @@ header-img: "img/twitter.jpg"
 
 <hr>
 {% endfor %}
-<!-- paginator -->
+
+
 <!-- Pager -->
+
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
     {% set i = 0 %}
-    {% for i < paginator.total_pages %}
+    {% while i < paginator.total_pages %}
     <a href="/page{{i}}"></a>
     {% set i+= 1 %}
-    {% endfor %}
+    {% endwhile %}
 </ul>
-{% endif %}
-
-{% if paginator.total_pages > 1 %}
-<!-- <ul class="pager">
+<ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
     </li>
     {% endif %}
-    {{ paginator }}
     {% if paginator.next_page %}
     <li class="next">
         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
     </li>
     {% endif %}
-</ul> -->
+</ul>
 {% endif %}
