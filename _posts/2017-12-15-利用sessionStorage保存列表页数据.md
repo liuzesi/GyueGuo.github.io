@@ -8,6 +8,7 @@ description: 利用sessionStorage保存列表页数据及sessionStorage特性记
 ---
 
 在之前的学习工作中因为应用场景的原因对于`sessionStorage`接触的并不多，大部分时间都没有考虑过`sessionStorage`，需要存储数据的时候，少量数据存`cookie`，大量数据存`localStorage`。
+
 然而有这么一种场景：页面数据通过ajax异步加载，在跳转后返回时需要新获取数据，浏览状态无法保存，这个时候需要我们自己对数据进行缓存，之前实现这种功能用的`localStorage`，前两天突然想到`sessionStorage`，然后试了下发现确实这种情况使用sessionStorage更合适。
 
 下面是使用过程：
