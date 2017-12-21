@@ -31,13 +31,6 @@ header-img: "img/twitter.jpg"
 
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
-    {% set i = 0 %}
-    {% while i < paginator.total_pages %}
-    <a href="/page{{i}}"></a>
-    {% set i+= 1 %}
-    {% endwhile %}
-</ul>
-<ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
