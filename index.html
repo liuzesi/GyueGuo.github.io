@@ -22,8 +22,11 @@ header-img: "img/twitter.jpg"
     </a>
     <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>
+
 <hr>
 {% endfor %}
+
+
 <!-- Pager -->
 
 {% if paginator.total_pages > 1 %}
